@@ -1,3 +1,5 @@
+// File for the ping command
+
 const {
   SlashCommandBuilder,
   ChatInputCommandInteraction,

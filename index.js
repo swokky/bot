@@ -3,6 +3,7 @@ const configIni = require("config.ini");
 const fs = require("fs");
 const { interactionDispacth } = require("./deployer");
 const { status } = require("./setPresence/presence.js");
+const { registerDatabasePermission } = require("./registerDatabasePermission");
 
 // Define the intents that the bot will use
 const client = new Client({
@@ -23,6 +24,7 @@ client.login(conf.Credential.token);
 client.on("ready", () => {
   console.log(`${client.user.username} as succesfully logged in !`);
   status.execute(client);
+  registerDatabasePermission();
 });
 
 // This event will be triggered when the bot receive an interaction
