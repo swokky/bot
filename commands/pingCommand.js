@@ -9,7 +9,8 @@ const {
 // Define the command
 exports.data = new SlashCommandBuilder()
   .setName("ping")
-  .setDescription("reply with the ping of the bot");
+  .setDescription("reply with the ping of the bot")
+  .toJSON();
 
 // Execute the command
 // This function will be called in the deployer.js file when the bot will receive an interaction named ping

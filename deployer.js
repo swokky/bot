@@ -16,7 +16,7 @@ const deploy = () => {
 
   commandsFolder.forEach((file) => {
     const command = require(`./commands/${file}`);
-    commands.push(command.data.toJSON());
+    commands.push(command.data);
     console.log("Successfully added 1 command");
   });
 };
@@ -30,7 +30,9 @@ exports.interactionDispacth = {
    * @param {Client} client
    */
   execute(interaction, client) {
-    const { command } = require(`./commands/${interaction.commandName}.js`);
+    const {
+      command,
+    } = require(`./commands/${interaction.commandName}Command.js`);
     command.execute(interaction, client);
   },
 };
